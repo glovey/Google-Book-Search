@@ -19,9 +19,16 @@ def add_to_reading_list(query_results, reading_list):
             print("that's not a valid option, please try again\n")
 
     ''' Ask user which book they would like to add. Add if not already in list '''
+
+   # TODO: fix bug
     while add_book == "yes":
-        book_choice = int(
-            input(f"which book would you like to add? Give a number between 1 and {len(query_results)}.\n")) - 1
+        book_choice = None
+        while book_choice not in range(0, len(query_results) - 1):
+            book_choice = int(input(f"which book would you like to add? Give a number between 1 and"
+                                    f" {len(query_results)}.\n")) - 1
+            if book_choice not in range(0, len(query_results) - 1):
+                print("that's not a valid option, please try again\n")
+
         if query_results[book_choice] not in reading_list:
             reading_list.append(query_results[book_choice])
             print(f"{query_results[book_choice].title} has been added to you reading list.\n")
