@@ -26,6 +26,7 @@ def add_to_reading_list(query_results, reading_list):
         while book_choice not in range(0, len(query_results) - 1):
             book_choice = int(input(f"which book would you like to add? Give a number between 1 and"
                                     f" {len(query_results)}.\n")) - 1
+            print (book_choice)
             if book_choice not in range(0, len(query_results) - 1):
                 print("that's not a valid option, please try again\n")
 
