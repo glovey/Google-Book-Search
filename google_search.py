@@ -1,4 +1,3 @@
-#
 import requests  # external library
 from create_book import Book
 from print_library import print_library
@@ -25,9 +24,9 @@ def do_search():
     response.raise_for_status()
     data = response.json()
 
+    ''' Create objects of each book, containing key details and store in array'''
+    query_results = []
     try:
-        ''' Create objects of each book, containing key details '''
-        query_results = []
         for x in range(min(len(data["items"]), 5)):
             book = Book()
 
@@ -53,11 +52,14 @@ def do_search():
             query_results.append(book)
 
     except KeyError:
-        print("Your search returned no results, check you have entered your query correctly.")
+        print("Your search returned no results, check you have entered your query correctly.\n")
 
-    ''' Present user with search results '''
-    print("here are your search results\n")
-    print_library(query_results)
+    ''' Present user with search results but pass if there were none '''
+    if len(query_results) == 0:
+        pass
+    else:
+        print("here are your search results:\n")
+        print_library(query_results)
 
     ''' Return query results for use in add_to_reading_list func'''
     return query_results
