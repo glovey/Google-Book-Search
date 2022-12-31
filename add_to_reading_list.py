@@ -45,7 +45,7 @@ def add_to_reading_list(query_results, reading_list):
             while another_book not in ["yes", "no"]:
                 another_book = input("Would you like to add another book? Answer yes or no\n").lower()
                 if another_book not in ["yes", "no"]:
-                    print("that's not a valid option, please try again\n")
+                    print("That's not a valid option, please try again\n")
                 if another_book == "yes":
                     print_library(query_results)
                 elif another_book == "no":

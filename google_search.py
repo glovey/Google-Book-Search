@@ -58,7 +58,7 @@ def do_search():
     if len(query_results) == 0:
         pass
     else:
-        print("here are your search results:\n")
+        print("\nHere are your search results:\n")
         print_library(query_results)
 
     ''' Return query results for use in add_to_reading_list func'''
