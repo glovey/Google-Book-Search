@@ -45,4 +45,3 @@ Written by Joe Filby
 
 Inspired by 8L
 
-[![Repl Talk Badge](https://replit-badge.vercel.app/api?id=143059&featuredOn=Ask%20me%20&replTalk=Anything)](https://replit.com/talk/share/post/143059)

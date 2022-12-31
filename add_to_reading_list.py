@@ -12,7 +12,6 @@ def add_to_reading_list(query_results, reading_list):
     """
 
     ''' Skip this step if query returned no results '''
-    print (query_results)
     if len(query_results) == 0:
         pass
     else:

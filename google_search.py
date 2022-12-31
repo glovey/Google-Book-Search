@@ -1,4 +1,4 @@
-import requests  # external library
+from requests import get  # external library
 from create_book import Book
 from print_library import print_library
 
@@ -20,10 +20,9 @@ def do_search():
     ''' Use user input and API key to create the API request and receive response data '''
     api_call = f"https://www.googleapis.com/books/v1/volumes?q={user_input}&key={api_key}"
 
-    response = requests.get(url=api_call)
+    response = get(url=api_call)
     response.raise_for_status()
     data = response.json()
-
     ''' Create objects of each book, containing key details and store in array'''
     query_results = []
     try:
