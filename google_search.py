@@ -14,8 +14,16 @@ def do_search():
     ''' API key to allow access to Google Books API '''
     api_key = "AIzaSyBFVYm6UHh50nFU9FvbUL6qqnKxfcGMpLQ"
 
-    ''' Gather input from user - their search query for Google books '''
-    user_input = input("what would you like to search Google Books for?\n")
+    ''' Gather input from user, their search query for Google books. Ensure they enter at least one character to 
+    avoid error '''
+    input_data = {" "}
+    while not len(input_data) > 1:
+        user_input = input("what would you like to search Google Books for?\n")
+        input_data.update(user_input)
+        if not len(input_data) > 1:
+            print("Please enter at least one character.")
+
+    input_data = {" "}
 
     ''' Use user input and API key to create the API request and receive response data '''
     api_call = f"https://www.googleapis.com/books/v1/volumes?q={user_input}&key={api_key}"

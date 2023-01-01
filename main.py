@@ -13,15 +13,15 @@ reading_list = []
 
 while system_on:
     choice = None
-    while choice not in ["1", "2", "3","4","5"]:
+    while choice not in ["1", "2", "3", "4", "5"]:
         print("\nWhat would you like to do?\n")
         print("1. Search Google Books")
         print("2. Check your reading list")
-        print("3. Load previous reading list. Please note this will overwrite your current reading list.")
-        print("4. Delete your reading list")
+        print("3. Load saved reading list. Please note this will overwrite your current reading list.")
+        print("4. Delete your saved reading list")
         print("5. Save your reading list and shut down")
         choice = input("choose 1, 2, 3, 4 or 5\n")
-        if choice not in ["1", "2", "3","4", "5"]:
+        if choice not in ["1", "2", "3", "4", "5"]:
             print("That's not a valid choice, please try again.")
 
     ''' Depending on user input: '''
@@ -33,33 +33,34 @@ while system_on:
         choice = None
     elif choice == "2":
         if len(reading_list) != 0:
-          print("\nHere is your reading list:\n")
-          print_library(reading_list)
-          print ("\n")  
-          
+            print("\nHere is your reading list:\n")
+            print_library(reading_list)
+            print("\n")
+
         else:
-          print("Your reading list is empty\n")
-          choice = None
+            print("Your reading list is empty\n")
+            choice = None
     elif choice == "3":
-      reading_list = load_list(reading_list)
+        reading_list = load_list(reading_list)
     elif choice == "4":
-      try:
-        os.remove("saved_reading_list.pickle")
-        print ("\nYour reading list has been deleted.")
-      except:
-        print ("You haven't saved any books to a reading list")
+        try:
+            os.remove("saved_reading_list.pickle")
+            print("\nYour reading list has been deleted.")
+        except:
+            print("You haven't saved any books to a reading list")
     else:
         keep_list = None
         while keep_list not in ["yes", "no"]:
-          keep_list = input("Would you like to save your reading list before you go? Answer yes or no.\nPlease note this will overwrite any previously saved reading list\n. ").lower()
-          if keep_list not in ["yes", "no"]:
-            print("That's not a valid option, please try again\n")
+            keep_list = input(
+                "Would you like to save your reading list before you go? Answer yes or no.\nPlease note this will overwrite any previously saved reading list\n. ").lower()
+            if keep_list not in ["yes", "no"]:
+                print("That's not a valid option, please try again\n")
         if keep_list == "yes":
-          save_list(reading_list)
-          print ("Your list has been saved for next time\n")
-          keep_list = None
+            save_list(reading_list)
+            print("Your list has been saved for next time\n")
+            keep_list = None
         else:
-          print ("Your reading list has not been saved\n")
-          keep_list = None
+            print("Your reading list has not been saved\n")
+            keep_list = None
         print("Thank you for using Joe books. Goodbye. ")
         system_on = False
