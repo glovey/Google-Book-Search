@@ -28,3 +28,5 @@ def test_search_results_added_to_reading_list(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
     add_to_reading_list(query_results, reading_list)
     assert query_results[0] == "test"
+
+test test

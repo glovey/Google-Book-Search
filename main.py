@@ -52,7 +52,8 @@ while system_on:
         keep_list = None
         while keep_list not in ["yes", "no"]:
             keep_list = input(
-                "Would you like to save your reading list before you go? Answer yes or no.\nPlease note this will overwrite any previously saved reading list\n. ").lower()
+                "Would you like to save your reading list before you go? Answer yes or no.\nPlease note this will "
+                "overwrite any previously saved reading list\n. ").lower()
             if keep_list not in ["yes", "no"]:
                 print("That's not a valid option, please try again\n")
         if keep_list == "yes":
