@@ -30,9 +30,9 @@ def load_list():
 
     try:
         with open("saved_reading_list.pickle", "rb") as f:
-            library = pickle.load(f)
+            loaded_list = pickle.load(f)
             print("your previous reading list has been loaded\n")
-            return library
+            return loaded_list
     except FileNotFoundError:
         print("You haven't saved any books to a reading list")
 

@@ -44,12 +44,12 @@ while system_on:
             print("Your reading list is empty\n")
             choice = None
     elif choice == "3":
-        reading_list = load_list()
+        reading_list = load_list(reading_list)
     elif choice == "4":
         delete_list()
     else:
         keep_list = None
-        while keep_list not in ["yes", "no"]:
+        while keep_list not in ["yes", "no"]
             keep_list = input(
                 "Would you like to save your reading list before you go? Answer yes or no.\nPlease note this will "
                 "overwrite any previously saved reading list\n. ").lower()
