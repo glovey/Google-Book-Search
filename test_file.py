@@ -1,4 +1,5 @@
-"""This file contains unit tests to test code functionality. Tests cover key functionality but does not cover simpler functions """
+"""This file contains unit tests to test code functionality. Tests cover key functionality but does not cover simpler
+'print only' functions. """
 
 import os
 from google_search import do_search
@@ -7,8 +8,6 @@ from add_to_reading_list import add_to_reading_list
 from manage_saved_list import save_list
 from manage_saved_list import load_list
 from manage_saved_list import delete_list
-
-
 
 '''Test Search function'''
 
@@ -54,6 +53,7 @@ def test_load_restores_saved_list():
     loaded_list = load_list()
     assert loaded_list == test_lib
     os.remove("saved_reading_list.pickle")
+
 
 def test_delete_func_removes_save_file():
     save_list(test_lib)

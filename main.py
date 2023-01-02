@@ -1,5 +1,5 @@
 """ This file contains system Logic - enabling a user to search Google Books, add books to a reading list and manage
-that reading list """
+that reading list. """
 
 from google_search import do_search
 from print_library import print_library

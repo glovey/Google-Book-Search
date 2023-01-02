@@ -4,13 +4,19 @@
 
 ## Summary
 
-This programme allows the user the search google books for any word or words they like. The programme makes an API call to the Google Books API and returns up to 5 search results, giving lkey details for each book.
+This programme allows the user to search google books for any word or words they like. The programme makes an API 
+call to the Google Books API and returns up to 5 search results, giving key details for each book.
 
-The user can then select book from the search results to add to their reading list and then view that reading list.
+The user can then select books from the search results to add to their reading list and then view that reading list.
 
-Finally, the programme gives the user the option to save their reading list, so it can be loaded during the next session.
+The programme also gives the user the option to save their reading list when exiting the programme, and gives the 
+option to load a reading list saved in a previous session. 
+
+Unit tests are provided to test functionality and facilitate future development.
 
 ## Installation
+
+### Main programme
 
 To run this programme using the command prompt (using Windows):
 
@@ -18,13 +24,18 @@ To run this programme using the command prompt (using Windows):
 >- Check out www.python.org to get started (or https://www.anaconda.com/products/distribution for Anaconda, a great **Python** distribution platform.
 - Open command prompt on your computer
 - Check you have the necessary Requests module by pip installing it:
->- At the command prompt enter:
->> `pip install requests`
+>- At the command prompt enter: <br>`pip install requests`
 - Within the command prompt, navigate to the file directory where you have save the Google Book Searcher files by entering:
->> `<current directory> cd [<directory containing programfile>]`
+> `<current directory> cd [<directory containing programfile>]`
 - And Finally, to run the programme enter:
->> `python main.py`
+> `python main.py`
 - Enjoy!
+
+### Unit tests
+
+- To run the unit tests you will need to have Pytest installed:
+>- `pip install pytest`
+
 
 ## How to use the programme
 

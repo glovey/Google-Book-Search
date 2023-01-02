@@ -23,8 +23,6 @@ def do_search():
         if not len(input_data) > 1:
             print("Please enter at least one character.")
 
-    input_data = {" "}
-
     ''' Use user input and API key to create the API request and receive response data '''
     api_call = f"https://www.googleapis.com/books/v1/volumes?q={user_input}&key={api_key}"
 

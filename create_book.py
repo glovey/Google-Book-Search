@@ -1,6 +1,6 @@
 class Book:
     """  Create Book objects from Google Book Search results, capturing key info. To be stored in query and reading
-    list arrays
+    list arrays.
 
         Attributes:
             title: int (book title)
