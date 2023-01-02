@@ -1,13 +1,16 @@
-""" This file contains system Logic - enabling a user to search Google Books and add books to a reading list """
+""" This file contains system Logic - enabling a user to search Google Books, add books to a reading list and manage
+that reading list """
 
 from google_search import do_search
 from print_library import print_library
 from add_to_reading_list import add_to_reading_list
-from save_load_list import save_list
-from save_load_list import load_list
-import os
+from manage_saved_list import save_list
+from manage_saved_list import load_list
+from manage_saved_list import delete_list
 
-''' Ask user what they would like to do on the system: search / check reading list / shut down '''
+
+''' Ask user what they would like to do on the system: search / check reading list / delete saved reading list / 
+save list and shut down '''
 system_on = True
 reading_list = []
 
@@ -41,13 +44,9 @@ while system_on:
             print("Your reading list is empty\n")
             choice = None
     elif choice == "3":
-        reading_list = load_list(reading_list)
+        reading_list = load_list()
     elif choice == "4":
-        try:
-            os.remove("saved_reading_list.pickle")
-            print("\nYour reading list has been deleted.")
-        except:
-            print("You haven't saved any books to a reading list")
+        delete_list()
     else:
         keep_list = None
         while keep_list not in ["yes", "no"]:
