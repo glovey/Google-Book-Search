@@ -46,13 +46,20 @@ def load_list(reading_list):
             with open("saved_reading_list.pickle", "rb") as f:
                 loaded_list = pickle.load(f)
                 print("your previous reading list has been loaded\n")
+
             for x in loaded_list:
+                count = 0
                 for y in current_reading_list:
                     if x.title == y.title and x.authors == y.authors and x.publisher == y.publisher:
-                        pass
+                        count += 1
                     else:
-                        current_reading_list.append(x)
-            return current_reading_list
+                        pass
+                if count > 0:
+                    pass
+                else:
+                    reading_list.append(x)
+
+            return reading_list
         else:
             try:
                 with open("saved_reading_list.pickle", "rb") as f:
