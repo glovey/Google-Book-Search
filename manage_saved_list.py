@@ -4,7 +4,7 @@ import os
 
 def save_list(library):
     """
-    Pickle library argument provided to give a file of the pickled data in binary.
+    Pickle library argument provided to create a file of the pickled data in binary.
 
         Parameters:
             library: array
@@ -31,6 +31,9 @@ def load_list(reading_list):
         Returns:
             library: array (of Book objects or empty if no save file exists)
     """
+
+    ''' Check if save exists and if books are in current list, if so offer to merge lists. Otherwise save list / 
+    advise if save file doesn't exist. '''
     current_reading_list = reading_list
     if len(current_reading_list) > 0 and os.path.exists("saved_reading_list.pickle"):
 
@@ -39,7 +42,7 @@ def load_list(reading_list):
             merge_list = input(
                 "You currently have books in your reading list. Do you want to merge this list with your "
                 "saved list? Otherwise the Loaded list will replace your current list. Enter yes or "
-                "no\n").lower()
+                "no.\n").lower()
             if merge_list not in ["yes", "no"]:
                 print("that's not a valid option, please try again\n")
         if merge_list == "yes":
