@@ -20,9 +20,9 @@ Unit tests are provided to test functionality and facilitate future development.
 
 To run this programme using the command prompt (using Windows):
 
-- Install **Python** on your computer:
+- Install Python on your computer:
   - Check out www.python.org to get started (or https://www.anaconda.com/products/distribution for Anaconda, a great 
-   **Python** distribution platform.
+   Python distribution platform.
   
 
 - Open command prompt on your computer
@@ -50,7 +50,7 @@ To run this programme using the command prompt (using Windows):
 - To run the unit tests you will need to have Pytest installed:
   - At the command prompt enter: 
 
-    `pip install requests`
+    `pip install pytest`
   
 
 - To run the unit tests enter the following at the command prompt:
@@ -67,37 +67,43 @@ From the main menu, there are 4 options:
 - Search Google Books
 - See your reading list
 - Load previously save reading list
-- Delete previously saved reading
+- Delete previously saved reading list
 - Save reading list and shut down
 
-And after selecting any of these options, you will be instructed how to proceed through each.
+And after selecting any of these options, you will be instructed on how to proceed through each.
 
 ## Unit tests
 
-This version of this programme passes all unit tests. 
+This version of this programme passes all unit tests. However, tests should be run when there is no save file i.e. 
+`saved_reading_list.pickle` does not exist. Certain tests create and then delete this file during their operation.
 
-Pytest does however raise a Deprecation Warning but this does not impact on functionality.
+Pytest does also raise a Deprecation Warning but this does not impact on functionality.
 
 ## Issues
 
-The programme passes all unit tests but a Deprecation warning is raised. While this does not affect functionality 
+- The programme passes all unit tests but a Deprecation warning is raised. While this does not affect functionality 
 this should be resolved in future development. 
 
-For now, Pytest reports this warning in addition to the unit tests, as it should, when pytest is called with:
+   - For now, Pytest reports this warning in addition to the unit tests, as it should, when pytest is called with:
 
-`pytest` 
+     `pytest` 
 
-To remove the warning from the report, run pytest by entering
+  - To remove the warning from the report, run pytest by entering  
+      `pytest -Wi`
+  
+    into the command prompt instead.
 
-`pytest -Wi`
 
-into the command prompt instead.
+- Unit test must be run while `saved_reading_list.pickle` does not exist. While this can be accommodated this 
+  requirement should be removed in future development. 
 
 ## Future development
 
-- Resolve Issues
+- Resolve Issues:
+  - Identify cause of Deprecation Warning.
+  - Investigate advanced use of `monkeypacth` to mock save file and associated methods.
 - Improve save/load functionality
-  - allow for multiple named reading lists so each can be loaded and new books can be added 
+  - allow for multiple named reading lists so each can be loaded and new books can be added .
 - Develop search function to allow result filtering by author / publisher etc. 
 
 ## Credits
