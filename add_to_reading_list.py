@@ -34,6 +34,7 @@ def add_to_reading_list(query_results, reading_list):
                 except ValueError:
                     print("that's not a valid option, please try again\n")
 
+            '''Add book if not already in reading list'''
             if query_results[book_choice] not in reading_list:
                 reading_list.append(query_results[book_choice])
                 print(f"{query_results[book_choice].title} has been added to you reading list.\n")

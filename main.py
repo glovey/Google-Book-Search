@@ -20,39 +20,39 @@ while system_on:
         print("\nWhat would you like to do?\n")
         print("1. Search Google Books")
         print("2. Check your reading list")
-        print("3. Load saved reading list. Please note this will overwrite your current reading list.")
+        print("3. Load your saved reading list.")
         print("4. Delete your saved reading list")
         print("5. Save your reading list and shut down")
         choice = input("choose 1, 2, 3, 4 or 5\n")
         if choice not in ["1", "2", "3", "4", "5"]:
             print("That's not a valid choice, please try again.")
 
-    ''' Depending on user input: '''
-
-    ''' Perform book search and ask if they want to add books to reading list, check the reading list, or close down 
-    the system '''
+    ''' Perform actions dependant on user input, based on option above '''
     if choice == "1":
         add_to_reading_list(do_search(), reading_list)
         choice = None
+
     elif choice == "2":
         if len(reading_list) != 0:
             print("\nHere is your reading list:\n")
             print_library(reading_list)
             print("\n")
-
         else:
             print("Your reading list is empty\n")
             choice = None
+
     elif choice == "3":
         reading_list = load_list(reading_list)
+
     elif choice == "4":
         delete_list()
+
     else:
         keep_list = None
-        while keep_list not in ["yes", "no"]
+        while keep_list not in ["yes", "no"]:
             keep_list = input(
                 "Would you like to save your reading list before you go? Answer yes or no.\nPlease note this will "
-                "overwrite any previously saved reading list\n. ").lower()
+                "overwrite any previously saved reading list.\n ").lower()
             if keep_list not in ["yes", "no"]:
                 print("That's not a valid option, please try again\n")
         if keep_list == "yes":

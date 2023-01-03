@@ -49,9 +49,37 @@ def test_save_creates_pickle_file():
 
 
 def test_load_restores_saved_list():
+    test_lib_2 = []
     save_list(test_lib)
-    loaded_list = load_list()
+    loaded_list = load_list(test_lib_2)
     assert loaded_list == test_lib
+    os.remove("saved_reading_list.pickle")
+
+
+def test_load_merges_current_and_saved_list(monkeypatch):
+    monkeypatch.setattr("builtins.input", lambda _: "Amazing work")
+    query_results = do_search()
+    monkeypatch.setattr("builtins.input", lambda _: "yes")
+
+    obj_list_1 = [query_results[0]]
+    obj_list_2 = [query_results[1]]
+    save_list(obj_list_1)
+    loaded_list = load_list(obj_list_2)
+    assert loaded_list[0].title == obj_list_2[0].title and loaded_list[1].title == obj_list_1[0].title
+    os.remove("saved_reading_list.pickle")
+
+
+def test_load_does_not_merge_book_already_in_list(monkeypatch):
+    monkeypatch.setattr("builtins.input", lambda _: "Amazing work")
+    query_results = do_search()
+    monkeypatch.setattr("builtins.input", lambda _: "yes")
+
+    obj_list_1 = [query_results[0]]
+    obj_list_2 = [query_results[0]]
+    save_list(obj_list_1)
+    loaded_list = load_list(obj_list_2)
+    print(loaded_list)
+    assert len(loaded_list) == 1
     os.remove("saved_reading_list.pickle")
 
 

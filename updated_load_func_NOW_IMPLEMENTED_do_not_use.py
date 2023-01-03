@@ -1,26 +1,12 @@
-import pickle
 import os
-
-
-def save_list(library):
-    """
-    Pickle library argument provided to give a file of the pickled data in binary.
-
-        Parameters:
-            library: array
-
-        Output:
-            saved_reading_list.pickle: file (containing saved library in binary)
-    """
-    with open("saved_reading_list.pickle", "wb") as f:
-        pickle.dump(library, f, pickle.HIGHEST_PROTOCOL)
+import pickle
+from print_library import print_library
 
 
 def load_list(reading_list):
     """
     Load previously saved (pickled) data within the file "saved_reading_list.pickle". Data will be an array as per
-    "save_list()". if current reading list and saved reading list contain books, offer to merge lists,
-    otherwise overwrite current reading list with saved reading list. Advise if no saved list exists.
+    "save_list()". Advise user if this file does not exist.
 
         Parameters:
             reading_list: array (from main) (array of books added by user to 'reading list', stored as Book objects)
@@ -76,20 +62,9 @@ def load_list(reading_list):
         except FileNotFoundError:
             if len(reading_list) > 0:
                 print("You haven't saved any books to a reading list")
+                print_library(reading_list)
                 return reading_list
             else:
                 print("You haven't saved any books to a reading list")
+                print_library(reading_list)
                 return []
-
-
-def delete_list():
-    """
-    Delete the file "saved_reading_list.pickle". Advise user if this file does not exist.
-
-    """
-
-    try:
-        os.remove("saved_reading_list.pickle")
-        print("\nYour reading list has been deleted.")
-    except FileNotFoundError:
-        print("You haven't saved any books to a reading list")

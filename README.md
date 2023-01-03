@@ -97,8 +97,7 @@ into the command prompt instead.
 
 - Resolve Issues
 - Improve save/load functionality
-  - Currently loading a saved reading list will overwrite any reading list created in the current session. A useful 
-    function would be to merge current and saved reading lists. 
+  - allow for multiple named reading lists so each can be loaded and new books can be added 
 - Develop search function to allow result filtering by author / publisher etc. 
 
 ## Credits
