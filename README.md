@@ -101,7 +101,7 @@ this should be resolved in future development.
 
 - Resolve Issues:
   - Identify cause of Deprecation Warning.
-  - Investigate advanced use of `monkeypacth` to mock save file and associated methods.
+  - Investigate advanced use of `monkeypatch` to mock save file and associated methods.
 - Improve save/load functionality
   - allow for multiple named reading lists so each can be loaded and new books can be added .
 - Develop search function to allow result filtering by author / publisher etc. 
